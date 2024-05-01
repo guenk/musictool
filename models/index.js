@@ -27,7 +27,7 @@ db.sequelize = sequelize;
 // Models and tables
 db.user = require("../models/user.model.js")(sequelize, Sequelize);
 db.role = require("../models/role.model.js")(sequelize, Sequelize);
-db.instrument = require("../models/musictool.model.js")(sequelize, Sequelize); // Importing the Instrument model
+db.instruments = require("../models/musictool.model.js")(sequelize, Sequelize); // Importing the Instrument model
 
 // Relation Many to Many between Role and Users
 db.role.belongsToMany(db.user, {

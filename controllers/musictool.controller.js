@@ -13,13 +13,13 @@ const MusicController = {
         }
     },
 
-    // Obtenir la liste de tous les instruments
     getAllInstruments: async (req, res) => {
         try {
             const instruments = await Instrument.findAll();
             res.status(200).send(instruments);
         } catch (error) {
-            res.status(500).send({ message: "Some error occurred while retrieving instruments." });
+            console.error("Detailed Error: ", error.message);
+            res.status(500).send({ message: "Some error occurred while retrieving instruments.", detail: error.message });
         }
     },
 
